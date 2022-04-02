@@ -66,13 +66,14 @@ const ContactBtn = styled.button`
   padding-right: 10px;
   border-radius: 6px;
   border: none;
-  background-color: #181818;
-  color: #ffffff;
+  background-color: #aaffff;
+  color: #000000;
   font-weight: 500;
   margin: 10px;
   cursor: pointer;
+  transition: all 150ms linear;
   &:hover {
-    background-color: #313435;
+    background-color: #5cffff;
   }
   @media (min-width: 768px) {
     margin: 20px;
