@@ -9,6 +9,10 @@ export const AppWrapper = styled.div`
 
 export const PageContent = styled.main`
   flex: 1 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
 `;
 
 export const StyledIconButton = styled(IconButton)`

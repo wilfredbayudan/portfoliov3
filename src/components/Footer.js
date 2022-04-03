@@ -11,6 +11,7 @@ const StyledFooter = styled.footer`
   background-color: #22272e;
   color: #e3e3e3;
   height: 50px;
+  font-size: 0.8em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,7 +38,7 @@ const Socials = styled.div`
 const Footer = () => {
   return (
     <StyledFooter>
-      <Copyright>Copyright&copy; 2022 Wilfred Bayudan</Copyright>
+      <Copyright>&copy; 2022 Wilfred Bayudan</Copyright>
       <Socials>
         <Tooltip title="GitHub" arrow>
           <StyledIconButton

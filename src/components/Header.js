@@ -4,11 +4,16 @@ import Logo from "../assets/logo.png";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import MobileNav from "./MobileNav";
 
-const HeaderWrapper = styled.header``;
+const HeaderWrapper = styled.header`
+  display: fixed;
+  top: 0;
+  width: 100%;
+`;
 
 const NavBar = styled.nav`
   border-bottom: 1px solid #e5e5e5;
   height: 60px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
