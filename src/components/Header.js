@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Logo from "../assets/logo.png";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
 const HeaderWrapper = styled.header``;
 
@@ -38,12 +39,20 @@ const LogoContainer = styled.div`
   }
 `;
 
-const NavLinks = styled.ul`
+const NavLinks = styled.div`
   height: 100%;
   margin: 0;
   padding: 0;
   display: inline-flex;
 `;
+
+const FullNav = styled.ul`
+  display: none;
+  @media (min-width: 768px) {
+    display: inline-flex;
+  }
+`;
+
 const Link = styled.li`
   list-style-type: none;
   margin: 0 20px;
@@ -69,9 +78,11 @@ const ContactBtn = styled.button`
   background-color: #aaffff;
   color: #000000;
   font-weight: 500;
-  margin: 10px;
   cursor: pointer;
   transition: all 150ms linear;
+  display: flex;
+  align-items: center;
+  gap: 3px;
   &:hover {
     background-color: #5cffff;
   }
@@ -79,6 +90,8 @@ const ContactBtn = styled.button`
     margin: 20px;
   }
 `;
+
+const StyledMailIcon = styled(MailOutlineIcon)``;
 
 const Header = () => {
   return (
@@ -89,11 +102,15 @@ const Header = () => {
           <span>AYUDAN</span>
         </LogoContainer>
         <NavLinks>
-          <Link>About</Link>
-          <Link>Work</Link>
-          <Link>Skills</Link>
-          <Link>Blog</Link>
-          <ContactBtn>Connect</ContactBtn>
+          <FullNav>
+            <Link>About</Link>
+            <Link>Work</Link>
+            <Link>Skills</Link>
+            <Link>Resume</Link>
+          </FullNav>
+          <ContactBtn>
+            <StyledMailIcon /> Contact
+          </ContactBtn>
         </NavLinks>
       </NavBar>
     </HeaderWrapper>
