@@ -70,7 +70,7 @@ const Link = styled.li`
   transition: all 150ms linear;
   cursor: pointer;
   &:hover {
-    border-bottom: 2px solid #aaffff;
+    border-bottom: 2px solid #00ceb3;
   }
 `;
 
@@ -80,7 +80,7 @@ const ContactBtn = styled.button`
   padding: 7px;
   border-radius: 6px;
   border: none;
-  background-color: #aaffff;
+  background-color: #00ceb3;
   color: #000000;
   font-weight: 500;
   cursor: pointer;
@@ -90,7 +90,7 @@ const ContactBtn = styled.button`
   gap: 3px;
   margin-left: 15px;
   &:hover {
-    background-color: #5cffff;
+    background-color: #24dac2;
   }
   span {
     display: none;
