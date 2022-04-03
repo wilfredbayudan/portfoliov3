@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Logo from "../assets/logo.png";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import MobileNav from "./MobileNav";
+import { NavLink } from "react-router-dom";
 
 const HeaderWrapper = styled.header`
   display: fixed;
@@ -69,12 +70,25 @@ const Link = styled.li`
   margin: 0 20px;
   height: 100%;
   padding: 0;
-  border-bottom: 2px solid rgba(255, 255, 255, 0);
   display: flex;
   align-items: center;
   transition: all 150ms linear;
-  cursor: pointer;
-  &:hover {
+  a,
+  button {
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    cursor: pointer;
+    font-size: 1rem;
+    background: none;
+  }
+  .isActive,
+  a:hover,
+  button:hover {
     border-bottom: 2px solid #00ceb3;
   }
 `;
@@ -117,10 +131,28 @@ const Header = () => {
         </LogoContainer>
         <NavLinks>
           <FullNav>
-            <Link>About</Link>
-            <Link>Work</Link>
-            <Link>Skills</Link>
-            <Link>Resume</Link>
+            <Link>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "isActive" : "")}
+              >
+                About
+              </NavLink>
+            </Link>
+            <Link>
+              <button>Work</button>
+            </Link>
+            <Link>
+              <button>Skills</button>
+            </Link>
+            <Link>
+              <NavLink
+                to="resume"
+                className={({ isActive }) => (isActive ? "isActive" : "")}
+              >
+                Resume
+              </NavLink>
+            </Link>
           </FullNav>
           <ContactBtn>
             <StyledMailIcon /> <span>Contact</span>
