@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Logo from "../assets/logo.png";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import MobileNav from "./MobileNav";
 
 const HeaderWrapper = styled.header``;
 
@@ -41,12 +42,17 @@ const LogoContainer = styled.div`
 
 const NavLinks = styled.div`
   height: 100%;
-  margin: 0;
-  padding: 0;
   display: inline-flex;
+  align-items: center;
+  padding-right: 10px;
+  @media (min-width: 768px) {
+    padding-right: 15px;
+  }
 `;
 
 const FullNav = styled.ul`
+  margin: 0;
+  height: 100%;
   display: none;
   @media (min-width: 768px) {
     display: inline-flex;
@@ -64,15 +70,14 @@ const Link = styled.li`
   transition: all 150ms linear;
   cursor: pointer;
   &:hover {
-    border-bottom: 2px solid #10c8fe;
+    border-bottom: 2px solid #aaffff;
   }
 `;
 
 const ContactBtn = styled.button`
   font-family: "Poppins", sans-serif;
   font-size: 1em;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 7px;
   border-radius: 6px;
   border: none;
   background-color: #aaffff;
@@ -83,11 +88,15 @@ const ContactBtn = styled.button`
   display: flex;
   align-items: center;
   gap: 3px;
+  margin-left: 15px;
   &:hover {
     background-color: #5cffff;
   }
-  @media (min-width: 768px) {
-    margin: 20px;
+  span {
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+    }
   }
 `;
 
@@ -109,8 +118,9 @@ const Header = () => {
             <Link>Resume</Link>
           </FullNav>
           <ContactBtn>
-            <StyledMailIcon /> Contact
+            <StyledMailIcon /> <span>Contact</span>
           </ContactBtn>
+          <MobileNav />
         </NavLinks>
       </NavBar>
     </HeaderWrapper>
